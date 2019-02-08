@@ -14,9 +14,29 @@ class App extends Component {
 		 }
 		 </ul>
 		 </div>
+		 renderForm()
 	  )
 	}
-
 }
 
+class Form extends Component{
+	constructor(props){
+			super(props);
+			this.state = {value: ''};
+			this.handleSubmit = this.handleSubmit.bind(this);
+	}
+	handleSubmit(event){
+		alert('text was submitted');
+	}
+	render(){
+		return(
+		<form onSubmit={this.handleSubmit}>
+		<label>
+		Add a note:
+		<input type="text" value={this.state.value}/>
+		</label>
+		<input type="submit" value="add"/>
+		</form> );
+	}
+}
 export default App;
