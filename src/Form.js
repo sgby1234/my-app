@@ -5,10 +5,10 @@ export class Form extends React.Component{
 		value: ''
 	}
 	constructor(props){
-			super(props);
-			this.state = {value: ''};
-			this.handleSubmit = this.handleSubmit.bind(this);
-	}
+		super(props);
+		this.state = {value: ''};
+		this.handleSubmit = this.handleSubmit.bind(this);
+}
 	handleSubmit(event){
 		event.preventDefault();
 		this.props.addNote(this.state.value);
@@ -19,12 +19,9 @@ export class Form extends React.Component{
 
 	render(){
 		return(
-		<form onSubmit={this.handleSubmit}>
-		<label>
-		Add a note:
-		<input type="text" value={this.state.value} onChange={this.handleChange}/>
-		</label>
-		<input type="submit" value="add"/>
+		<form className="form" onSubmit={this.handleSubmit}>
+		<input type="text" style={{flex: '10', padding: '5px'}}value={this.state.value} placeHolder = "Add a new note" onChange={this.handleChange}/>
+		<input className="btn" type="submit" value="add"/>
 		</form> );
 	}
 }
